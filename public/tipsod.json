@@ -1,0 +1,93 @@
+{
+  "jnlp": {
+    "@spec": "1.0+",
+    "@codebase": "https://sscweb.gsfc.nasa.gov/tipsod",
+    "@href": "tipsod.jnlp",
+    "information": {
+      "title": "4D Orbit Viewer",
+      "vendor": "NASA/Goddard Space Flight Center",
+      "homepage": {
+        "@href": "index.html"
+      },
+      "description": [
+        {
+          "#text": "SSCWeb 4D Orbit Viewer",
+          "@kind": "long"
+        },
+        {
+          "#text": "4D Orbit Viewer",
+          "@kind": "short"
+        }
+      ],
+      "icon": {
+        "@href": "jnlpIcon.png"
+      },
+      "offline-allowed": {},
+      "shortcut": {
+        "@online": "false",
+        "desktop": {},
+        "menu": {
+          "@submenu": "NASA-GSFC-SPDF"
+        }
+      }
+    },
+    "security": {
+      "all-permissions": {}
+    },
+    "resources": {
+      "java": {
+        "@version": "9+",
+        "@java-vm-args": "--add-modules=java.xml.ws --add-exports=java.desktop/sun.awt=ALL-UNNAMED",
+        "@initial-heap-size": "96m",
+        "@max-heap-size": "512m"
+      },
+      "j2se": {
+        "@version": "1.6+",
+        "@initial-heap-size": "96m",
+        "@max-heap-size": "512m"
+      },
+      "jar": [
+        {
+          "@href": "ov.jar",
+          "@main": "true"
+        },
+        {
+          "@href": "ov-help.jar"
+        },
+        {
+          "@href": "sscWebServicesJaxWs-client.jar"
+        },
+        {
+          "@href": "helioTrajectoriesWs-client.jar"
+        }
+      ],
+      "extension": [
+        {
+          "@name": "JavaHelp",
+          "@href": "JavaHelp/JavaHelp.jnlp"
+        },
+        {
+          "@name": "Java3D",
+          "@href": "https://sscweb.gsfc.nasa.gov/media/java3d/webstart/release/java3d-1.5-latest.jnlp"
+        }
+      ],
+      "property": [
+        {
+          "@name": "jnlp.ssc.url",
+          "@value": "https://sscweb.gsfc.nasa.gov/WS/ssc/2/SatelliteSituationCenterService?wsdl"
+        },
+        {
+          "@name": "jnlp.helio.url",
+          "@value": "https://sscweb.gsfc.nasa.gov/WS/helio/1/HeliocentricTrajectoriesService?wsdl"
+        },
+        {
+          "@name": "http.agent",
+          "@value": "TIPSOD"
+        }
+      ]
+    },
+    "application-desc": {
+      "@main-class": "gov.nasa.gsfc.spdf.orb.OrbitViewer"
+    }
+  }
+}
