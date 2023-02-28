@@ -4,7 +4,7 @@ const MyApplet = ({ jnlpFile }) => {
   useEffect(() => {
     // Load the deployJava script
     const script = document.createElement('script');
-    script.src = 'http://www.java.com/js/deployJava.js';
+    script.src = 'https://www.java.com/js/deployJava.js';
     script.async = true;
     document.body.appendChild(script);
 
